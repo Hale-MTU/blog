@@ -1,5 +1,6 @@
 import { normalizePages } from 'nextra/normalize-pages'
 import { getPageMap } from 'nextra/page-map'
+import { isApp, type App } from './apps'
 
 // Every Markdown file under content/posts, newest first. The folder is looked up in
 // the root page map because getPageMap('/posts') throws while there is no post.
@@ -42,4 +43,10 @@ export async function getTagCounts(): Promise<[string, number][]> {
   }
 
   return [...counts].sort(([a, x], [b, y]) => y - x || a.localeCompare(b))
+}
+
+// The app a post is about, from its `app:` front matter; undefined for general Hale news.
+export function postApp(post: Post): App | undefined {
+  const app = post.frontMatter?.app
+  return isApp(app) ? app : undefined
 }

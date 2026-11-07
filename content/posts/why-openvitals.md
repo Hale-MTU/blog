@@ -3,6 +3,7 @@ title: Why OpenVitals?
 date: 2026-10-17
 description: What made me want to start OpenVitals
 author: Manuel
+app: openvitals
 tags: [announcement]
 ---
 

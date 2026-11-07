@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import type { Post } from '../lib/posts'
+import { appInfo } from '../lib/apps'
+import { postApp, type Post } from '../lib/posts'
 import { formatDate } from '../lib/site'
 
 // The theme's PostCard prints its date with toDateString(); this one prints the
@@ -7,6 +8,7 @@ import { formatDate } from '../lib/site'
 export function PostCard({ post }: { post: Post }) {
   const { title, description, date } = post.frontMatter ?? {}
   const dateObj = date ? new Date(date) : undefined
+  const app = postApp(post)
 
   return (
     <div>
@@ -23,14 +25,14 @@ export function PostCard({ post }: { post: Post }) {
           </Link>
         </p>
       )}
-      {dateObj && (
-        <time
-          className="x:text-sm x:dark:text-gray-400 x:text-gray-600"
-          dateTime={dateObj.toISOString()}
-        >
-          {formatDate(dateObj)}
-        </time>
-      )}
+      <div className="hale-post-meta x:text-sm x:dark:text-gray-400 x:text-gray-600">
+        {app && (
+          <Link href={`/${app}/`} className="hale-app-label">
+            {appInfo[app].name}
+          </Link>
+        )}
+        {dateObj && <time dateTime={dateObj.toISOString()}>{formatDate(dateObj)}</time>}
+      </div>
     </div>
   )
 }
