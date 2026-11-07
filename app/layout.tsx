@@ -12,13 +12,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
     default: site.title,
-    template: '%s - OpenVitals'
+    template: '%s - Hale blog'
   },
   description: site.description,
   openGraph: {
     title: site.title,
     description: site.description,
-    siteName: 'OpenVitals',
+    siteName: 'Hale',
     url: site.url
   },
   alternates: {
@@ -36,8 +36,9 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <Layout>
           <Navbar pageMap={await getPageMap()}>
             <Link href="/" className="openvitals-brand">
-              <img src="/openvitals-logo.png" alt="" width="28" height="28" />
-              <b>OpenVitals</b>
+              <img src="/hale-mark.png" alt="" width="28" height="28" />
+              <b>Hale</b>
+              <span>blog</span>
             </Link>
             <a href="https://openvitals.health" className="openvitals-home">
               Home
@@ -51,7 +52,9 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
 
           <Footer>
             <span className="openvitals-footer">
-              <span>OpenVitals blog</span>
+              <span>
+                <a href="https://hale.ngo">Hale MTÜ</a>
+              </span>
               <a href="/feed.xml">RSS</a>
             </span>
           </Footer>
