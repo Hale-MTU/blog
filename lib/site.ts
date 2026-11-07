@@ -1,8 +1,8 @@
 export const site = {
   title: 'OpenVitals Blog',
   description: 'News and write-ups from the OpenVitals project.',
-  url: 'https://blog.openvitals.health',
-  repository: 'https://github.com/OpenVitals-MTU/blog'
+  url: 'https://blog.hale.ngo',
+  repository: 'https://github.com/Hale-MTU/blog'
 }
 
 // Front matter dates carry no time zone and parse as UTC midnight, so they are

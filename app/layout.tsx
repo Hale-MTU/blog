@@ -39,10 +39,10 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
               <img src="/openvitals-logo.png" alt="" width="28" height="28" />
               <b>OpenVitals</b>
             </Link>
-            <a href="https://openvitals.health" className="openvitals-home">
+            <a href="https://hale.ngo" className="openvitals-home">
               Home
             </a>
-            <a href="https://docs.openvitals.health">Docs</a>
+            <a href="https://docs.hale.ngo">Docs</a>
             <Search placeholder="Search posts…" className="openvitals-search" />
             <ThemeSwitch />
           </Navbar>

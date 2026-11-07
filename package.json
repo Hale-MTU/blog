@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "description": "OpenVitals blog.",
-  "homepage": "https://blog.openvitals.health/",
+  "homepage": "https://blog.hale.ngo/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/OpenVitals-MTU/blog.git"
+    "url": "https://github.com/Hale-MTU/blog.git"
   },
   "scripts": {
     "dev": "next dev --webpack",
