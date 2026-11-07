@@ -1,6 +1,6 @@
 export const site = {
-  title: 'OpenVitals Blog',
-  description: 'News and write-ups from the OpenVitals project.',
+  title: 'Hale blog',
+  description: 'News and write-ups from Hale: OpenVitals, OpenWatch and OpenBridge.',
   url: 'https://blog.hale.ngo',
   repository: 'https://github.com/Hale-MTU/blog'
 }
