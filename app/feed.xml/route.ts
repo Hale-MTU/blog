@@ -1,4 +1,5 @@
-import { getPosts } from '../../lib/posts'
+import { appInfo } from '../../lib/apps'
+import { getPosts, postApp } from '../../lib/posts'
 import { site } from '../../lib/site'
 
 // Written once at build time to out/feed.xml.
@@ -18,6 +19,7 @@ export async function GET() {
   const items = posts.map(post => {
     const { title, description, date } = post.frontMatter ?? {}
     const link = `${site.url}${post.route}/`
+    const app = postApp(post)
 
     return [
       '    <item>',
@@ -26,6 +28,7 @@ export async function GET() {
       `      <guid>${link}</guid>`,
       description && `      <description>${escapeXml(description)}</description>`,
       date && `      <pubDate>${new Date(date).toUTCString()}</pubDate>`,
+      app && `      <category>${appInfo[app].name}</category>`,
       '    </item>'
     ]
       .filter(Boolean)

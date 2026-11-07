@@ -26,6 +26,7 @@ title: Syncing a Garmin watch without the cloud
 date: 2026-10-17
 description: One line shown under the title in the post list and in the RSS feed.
 author: Manuel
+app: openwatch
 tags: [garmin, devices]
 ---
 
@@ -34,6 +35,7 @@ The post, in Markdown.
 
 - `title` and `date` are required. The list is sorted by `date`, newest first.
 - `tags` is a list, even for one tag (`tags: [release]`). Each tag gets a page at `/tags/<tag>/`; keep tags lowercase with hyphens, since they become addresses.
+- `app` is the app the post is about: `openvitals`, `openwatch` or `openbridge`. The post then shows that app's label and is listed on its section page (`/openwatch/` and so on). Leave it out for news about Hale itself.
 - `description` and `author` are optional.
 
 Images go next to the post or in `public/`, and are linked with a relative path (`![Dashboard](./dashboard.png)`) or from the root (`![Dashboard](/images/dashboard.png)`).
@@ -71,8 +73,10 @@ python3 -m http.server --directory out 3000
 ## Layout
 
 - `content/posts/` - the posts.
-- `app/page.tsx` - the home page: the tags and the list of posts.
+- `app/page.tsx` - the home page: the app strip, the tags and the list of posts.
 - `app/[...mdxPath]/page.tsx` - renders every Markdown file in `content/`.
+- `app/openvitals/`, `app/openwatch/`, `app/openbridge/` - one section page per app, built by `components/app-section.tsx`.
+- `lib/apps.ts` - the three apps: name, one-line description, mark.
 - `app/tags/[tag]/page.tsx` - one page per tag.
 - `app/feed.xml/route.ts` - the RSS feed, written at build time.
 - `app/_meta.ts` - the navbar links.

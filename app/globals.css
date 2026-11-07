@@ -1,7 +1,8 @@
 /*
   The navbar keeps its links on the right; the brand goes first and takes the slack.
-  The theme renders the _meta links (Posts) before the ones in app/layout.tsx, so
-  Home is moved ahead of them here.
+  The theme renders the _meta link (Posts) before the ones in app/layout.tsx, which
+  is the order wanted: Posts, hale.ngo, Docs. The column is too narrow for the three
+  apps as well; the strip on the home page and each post's label lead to them.
 */
 .openvitals-brand {
   display: inline-flex;
@@ -11,10 +12,6 @@
   order: -2;
   margin-right: auto;
   text-decoration: none;
-}
-
-.openvitals-home {
-  order: -1;
 }
 
 /* The theme's search box is a fixed 16rem; here it gives up width before the links do. */
@@ -53,4 +50,79 @@
 
 article img {
   border-radius: 10px;
+}
+
+/* The apps: a strip on the home page, a label on each post, a heading on each section. */
+.hale-intro {
+  display: grid;
+  gap: 1rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.hale-apps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hale-app-link-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem 0.35rem 0.35rem;
+  border: 1px solid rgb(127 127 127 / 30%);
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hale-app-link-card:hover {
+  border-color: currentColor;
+}
+
+.hale-post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hale-app-label {
+  padding: 0.05rem 0.55rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hale-section-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hale-section-head img {
+  flex: none;
+  margin: -0.5rem;
+}
+
+.hale-section-head h1 {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.hale-section-head p {
+  margin: 0.4rem 0 0;
+}
+
+.hale-section-head a {
+  text-decoration: underline;
+}
+
+.hale-empty {
+  margin-top: 2rem;
 }
