@@ -5,13 +5,13 @@ Nextra blog for OpenVitals: news, release write-ups and longer articles.
 Repository:
 
 ```text
-https://github.com/OpenVitals-MTU/blog
+https://github.com/Hale-MTU/blog
 ```
 
 Website URL:
 
 ```text
-https://blog.openvitals.health/
+https://blog.hale.ngo/
 ```
 
 ## Writing a Post
@@ -82,4 +82,4 @@ python3 -m http.server --directory out 3000
 
 The GitHub Actions workflow (`.github/workflows/test.yml`) builds the site on every push and pull request and, on a push to `main`, deploys `out/` to GitHub Pages.
 
-One-time setup: in the repository's Settings → Pages, set the source to "GitHub Actions" and the custom domain to `blog.openvitals.health`, and turn on "Enforce HTTPS" once the certificate is issued. In DNS, `blog` is a `CNAME` record pointing to `openvitals-mtu.github.io`.
+One-time setup: in the repository's Settings → Pages, set the source to "GitHub Actions" and the custom domain to `blog.hale.ngo`, and turn on "Enforce HTTPS" once the certificate is issued. In DNS, `blog` is a `CNAME` record on hale.ngo pointing to `hale-mtu.github.io`. The old address, blog.openvitals.health, is served by a separate redirect site that forwards every path here.
